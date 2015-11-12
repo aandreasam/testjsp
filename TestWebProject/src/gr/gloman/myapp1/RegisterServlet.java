@@ -1,6 +1,7 @@
 package gr.gloman.myapp1;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,6 +48,22 @@ public class RegisterServlet extends HttpServlet {
 			String email = request.getParameter("email");
 			HttpSession session = request.getSession();
 			session.setAttribute("fullname", fullname);
+			
+			DatabaseAccess db = new DatabaseAccess();
+			ResultSet rs = db.executeReader("SELECT id FROM accounts WHERE username='"+username+"' AND password='"+password+"'");
+			int id=0;
+			try
+			{
+				while(rs.next())
+				{
+					id = rs.getInt("id");
+				}
+			}
+			catch (Exception e)
+			{
+				
+			}
+			session.setAttribute("id", id);
 			RegisterClass register = new RegisterClass(username, fullname, email, confirmPassword);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("pages/MemberPage.jsp");
 			dispatcher.forward(request, response);
@@ -54,10 +71,12 @@ public class RegisterServlet extends HttpServlet {
 		else
 		{
 			request.setAttribute("errorMessage","Passwords do not match.");
+		    
 			//response.sendRedirect(request.getContextPath() + "/pages/RegisterPage.jsp");
 			
 			//RequestDispatcher dispatcher = request.getRequestDispatcher("pages/RegisterPage.jsp");
 			//dispatcher.forward(request, response);
+			//request.getServletContext().getContext("pages/RegisterPage.jsp");
 			request.getRequestDispatcher("pages/RegisterPage.jsp").forward(request, response);
 			
 		}

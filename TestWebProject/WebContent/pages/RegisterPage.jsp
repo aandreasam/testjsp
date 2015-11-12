@@ -11,7 +11,7 @@
 	<br />
 	<br />
 	<font color="red">${errorMessage}</font>
-	<form action="../RegisterServlet" method="post">
+	<form action="/TestWebProject/RegisterServlet" method="post">
 		<span>Username:</span><input type="text" name="username" />
 		<br /> 
 		<span>Fullname:</span><input type="text" name="fullname" />
