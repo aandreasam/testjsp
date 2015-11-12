@@ -1,0 +1,53 @@
+/* HTML5 and jQuery Super Simple Nav by Todd Motto @toddmotto - toddmotto.com */
+
+/* =============================================================================
+   Navigation Core Styles
+   ========================================================================== */
+   
+.dropDownUserMenu {
+	float:right; 
+	min-width:200px;
+	position:relative;
+	background: url(images/icons-sprites.png) no-repeat 180px -234px;
+	float:left;
+	
+}
+.dropDownUserMenu:hover {
+	background: #1c1c1c url(images/icons-sprites.png) no-repeat 180px -276px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border-bottom:1px solid #000;	
+}
+
+.dropDownUserMenu ul { 
+	white-space: nowrap;
+	
+}
+.dropDownUserMenu ul li {
+	float:left;display:inline; 
+	background:url(images/icons-sprites.png) no-repeat 8px 8px;
+	}
+
+.dropDownUserMenu ul li a {display:block;padding:0px 40px; line-height:42px; margin-bottom:1px; width:120px; font-size:14px; font-weight:700;}
+.dropDownUserMenu ul li ul {
+	position:absolute;
+	width:200px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background:#1c1c1c;
+	top:45px;
+}
+.dropDownUserMenu ul li ul li {margin:0;padding:0;width:100%; font-size: 14px; border-bottom:1px solid #303030; background:none;}
+#header nav ul li ul li a {display:block; padding:7px 10px; margin:0px; color:#989898; width:180px; font-size:16px; font-weight:400}
+#header .myAccountMItem {background:url(images/icons-sprites.png) no-repeat 162px -27px; }
+#header .myStreamsMItem {background:url(images/icons-sprites.png) no-repeat 162px -74px; }
+#header .settingsMItem {background:url(images/icons-sprites.png) no-repeat 162px -125px;}
+#header .logoutMItem {background:url(images/icons-sprites.png) no-repeat 162px -173px; border-bottom:none;}
+#header nav ul li ul li a:hover {background-color:#373737;}
+.dropDownUserMenu ul li ul.fallback {display:none;}
+.dropDownUserMenu ul li:hover ul.fallback {display:block;}
+
+
+

@@ -1,0 +1,141 @@
+﻿@charset "utf-8";
+.addstream {
+    color: #FFFFFF;
+    background-color:#ff0000;
+}
+.home {
+    color: #FFFFFF;
+    background-color:#89C5BB;
+}
+.myalert{
+    color: #FFFFFF;
+    background-color: #5F99AF;
+}
+
+.dispNone{
+    display:none;
+}
+
+
+.label_class {
+ font-weight:700;}
+
+.bg_image_view {
+background-image:url("images/icons-sprites.png") no-repeat;
+}
+
+
+.pager2 {
+	/*margin: 20px 10px;
+	padding:50px 0px 5px 0px;
+	text-align:right;*/
+	font-family:"Open Sans";
+    display: inline-block;
+	/*float:right;
+	height:34px;*/
+	}
+.pager2 ul {
+	list-style-type:none;
+	float:left;
+	
+	}
+.pager2 ul li {
+	list-style-type:none;
+	float:left;
+	}	
+.pager2 ul li:first-child {
+	padding-right:10px;
+	line-height:30px;
+	}
+.pager2 ul li a{
+	padding:5px 10px;
+	display:block;
+	border:1px solid #c2ced4;
+	width:12px;
+	height:20px;
+	background: #f5f7f9 url(images/icon-paging-arrows.png) no-repeat;}
+	
+.pager2 ul li a.latest{ 
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background-position: -90px 0px;
+	}
+.pager2 ul li a.oldest{ 
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-right:1px solid #c2ced4;
+	background-position: -30px 0px;
+	}
+	
+.pager2 ul li a.stepBack { background-position: -60px 0px;} 
+.pager2 ul li a.stepForward { background-position: 0px 0px;}
+
+.pager2 ul li a.latest:hover{background-position: -90px -30px; }
+.pager2 ul li a.stepBack:hover { background-position: -60px -30px;} 
+.pager2 ul li a.stepForward:hover { background-position: 0px -30px;}
+.pager2 ul li a.oldest:hover{ background-position: -30px -30px;}
+
+
+#body_GV_purchase {
+    min-width: 988px;
+}
+
+#body_GV_purchase th {
+    max-width: 320px;
+    word-wrap: break-word;
+}
+
+#body_GV_purchase td {
+    max-width: 320px;
+    word-wrap: break-word;
+}
+
+#body_GV_expiredstreams {
+    min-width: 988px;
+}
+
+#body_Table_activePackets {
+    min-width: 988px;
+}
+
+#body_Table_expiredpackets{
+    min-width: 988px;
+}
+
+#body_table_streams_for_alerts{
+    min-width: 988px;
+}
+
+#body_TablealertsStream{
+    min-width: 988px;
+}
+
+#Table_activePackets{
+    min-width: 988px;
+}
+
+#Table_expiredpackets{
+    min-width: 988px;
+}
+
+#GV_purchase{
+    min-width: 988px;
+}
+
+#GV_expiredstreams{
+    min-width: 988px;
+}
+
+.dropDownUserMenu ul {
+    margin:0;
+}
+
+
