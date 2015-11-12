@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome, ${fullname}!</h1>
+	<h1>Welcome, ${fullname}!</h1> <form action="/TestWebProject/LogoutServlet" method="post" style="float:left;"><input type="submit" value="Logout"/></form>
 </body>
 </html>

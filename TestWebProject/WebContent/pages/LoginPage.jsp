@@ -8,5 +8,15 @@
 </head>
 <body>
 	<h1>Login!</h1>
+	<br/>
+	<br/>
+	<font color="red">${errorToLoginMessage}</font>
+	<form action="/TestWebProject/LoginServlet" method="post">
+	<span>Username:</span><input type="text" name="username" />
+	<br/>
+	<span>Password:</span><input type="password" name="password" />
+	<br>
+	<input type="submit" value="Login"/>
+	</form>
 </body>
 </html>
