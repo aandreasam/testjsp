@@ -51,7 +51,6 @@
 	</form>
 
 
-
 	<h2>Servlet for New version</h2>
 	<form action="../ServletAboutNewVersion" method="post">
 		Username:<input type="text" name="username" /><br /> Fullname:<input
