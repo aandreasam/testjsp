@@ -58,16 +58,13 @@ public class RegisterServlet extends HttpServlet {
 		{
 			if (password.equals(confirmPassword))
 			{
-				HttpSession session = request.getSession();
-				session.setAttribute("fullname", fullname);
-
 				DatabaseAccess db = new DatabaseAccess();
-				ResultSet rs = db.executeReader("SELECT id FROM accounts WHERE username='"+ username+ "' AND password='"+ password+ "'");
-				int id = 0;
+				ResultSet rs = db.executeReader("SELECT id FROM accounts WHERE username='"+ username+ "'");
+				boolean flag_username = false;
 				try {
 						while (rs.next()) 
 						{
-							id = rs.getInt("id");
+							flag_username=true;
 						}
 				} 
 				catch (Exception e) 
@@ -77,10 +74,37 @@ public class RegisterServlet extends HttpServlet {
 				{
 					db.close();
 				}
-				session.setAttribute("id", id);
-				RegisterClass register = new RegisterClass(username, fullname, email, confirmPassword);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("pages/MemberPage.jsp");
-				dispatcher.forward(request, response);
+				if(!flag_username)
+				{
+				
+					HttpSession session = request.getSession();
+					session.setAttribute("fullname", fullname);
+	
+					
+					rs = db.executeReader("SELECT id FROM accounts WHERE username='"+ username+ "' AND password='"+ password+ "'");
+					int id = 0;
+					try {
+							while (rs.next()) 
+							{
+								id = rs.getInt("id");
+							}
+					} 
+					catch (Exception e) 
+					{
+	
+					} finally 
+					{
+						db.close();
+					}
+					session.setAttribute("id", id);
+					RegisterClass register = new RegisterClass(username, fullname, email, confirmPassword);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("pages/MemberPage.jsp");
+					dispatcher.forward(request, response);
+				}else
+				{
+					//request.setAttribute("errorMessage", "USERNAME ALREADY EXISTS. PLEASE ENTER A DIFFERENT USER NAME.");
+					request.getRequestDispatcher("pages/RegisterPage.jsp").forward(request, response);
+				}
 			} 
 			else 
 			{
